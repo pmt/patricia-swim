@@ -1,0 +1,35 @@
+*, *:before, *:after { box-sizing: border-box; }
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+body {
+    font-family: "Comfortaa", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; 
+    -webkit-text-size-adjust: none;
+    color: #000;
+}
+a {
+    color: #000;
+    text-decoration: none;
+}
+main {
+    display: grid;
+    grid-template-rows: 50px 1fr;
+    height: 100dvh;
+}
+main #top-bar {
+    display: flex;
+    padding: 5px;
+    gap: 5px;
+    border-bottom: 1px solid #000;
+}
+main #top-bar .dot {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #000;
+    border-radius: 100%;
+}
