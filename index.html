@@ -17,6 +17,7 @@
             <div class="dot"></div>
         </div>
         <div id="scene" style="background-image: url('images/backgrounds/bg-1.jpg');">
+            <!-- Model options -->
             <div id="model-options">
                 <div class="option" id="hair">
                     <label>Hair</label>
@@ -32,11 +33,13 @@
                 </div>
                 <div class="option" id="size">
                     <label>Size</label>
-                    <button id="size-small"></button>
-                    <button id="size-medium"></button>
-                    <button id="size-large"></button>
+                    <button id="size-small">S</button>
+                    <button id="size-medium">M</button>
+                    <button id="size-large">L</button>
                 </div>
             </div>
+
+            <!-- Background options -->
             <div id="background-options">
                 <label>BG</label>
                 <button id="bg-1" class="selected"></button>
@@ -44,10 +47,7 @@
                 <button id="bg-3"></button>
                 <button id="bg-4"></button>
             </div>
-            <div id="tops-nav">
-                <button id="tops-next"></button>
-                <button id="tops-prev"></button>
-            </div>
+
             <!-- Model -->
             <div id="model">
                 <img src="images/large/hair/ginger.svg" alt="" id="hair">
@@ -55,10 +55,14 @@
                 <img src="images/large/bottom/blue.svg" alt="" id="bottom">
                 <img src="images/large/body/tan.svg" alt="" id="body">
             </div>
-            <div id="bottoms-nav">
-                <button id="bottoms-next"></button>
-                <button id="bottoms-prev"></button>   
-            </div>
+
+            <!-- Tops/bottoms navigation -->
+            <button id="tops-next" class="tb-nav-button"></button>
+            <button id="tops-prev" class="tb-nav-button"></button>
+            <button id="bottoms-next" class="tb-nav-button"></button>
+            <button id="bottoms-prev" class="tb-nav-button"></button>
+
+            <!-- Links -->
             <a href="" id="home-link">Home</a>
             <a href="" id="shop-link">Shop</a>
         </div>
