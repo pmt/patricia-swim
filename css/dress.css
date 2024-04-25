@@ -138,7 +138,7 @@ button.selected {
 
 /* Home link */
 a#home-link {
-    grid-column: 2;
+    grid-column: 1;
     grid-row: 5;
     display: flex;
     flex-flow: column nowrap;
@@ -154,6 +154,7 @@ a#home-link {
     font-size: 14px;
     cursor: pointer;
     z-index: 1000;
+    justify-self: end;
 }
 a#home-link::after {
     content: '';
@@ -176,6 +177,7 @@ a#shop-link {
     border: 1px solid #000;
     box-shadow: 0px 0px 5px #000;
     font-size: 36px;
+    align-self: end;
 }
 
 #model {
@@ -233,5 +235,11 @@ a#shop-link {
     }
     #bottoms-prev {
         justify-self: start;
+    }
+    a#home-link {
+        justify-self: start;
+    }
+    a#shop-link {
+        font-size: 20px;
     }
 }
