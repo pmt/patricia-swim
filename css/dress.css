@@ -1,3 +1,6 @@
+html {
+    overflow: hidden !important;
+}
 #scene {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
@@ -6,6 +9,7 @@
     background-size: cover;
     background-position: center center;
     height: calc(100dvh - 50px);
+    padding: 20px;
 }
 #model-options {
     grid-column: 1;
@@ -21,7 +25,7 @@
     box-shadow: 0px 0px 5px #000;
     width: max-content;
     height: max-content;
-    margin-top: 40px;
+    z-index: 1000;
 }
 #model-options label, #background-options label {
     font-size: 14px;
@@ -60,6 +64,7 @@ button.selected {
 
 #model-options #size button {
     font-family: "Comfortaa", sans-serif;
+    color: #000;
     text-align: center;
     display: flex;
     flex-flow: row nowrap;
@@ -85,7 +90,6 @@ button.selected {
     background-color: #fff;
     box-shadow: 0px 0px 5px #000;
     width: max-content;
-    margin-top: 30px;
     z-index: 1000;
 }
 #background-options button {
@@ -148,7 +152,6 @@ a#home-link {
     border: 1px solid #000;
     box-shadow: 0px 0px 5px #000;
     font-size: 14px;
-    margin: 10px;
     cursor: pointer;
     z-index: 1000;
 }
@@ -173,19 +176,23 @@ a#shop-link {
     border: 1px solid #000;
     box-shadow: 0px 0px 5px #000;
     font-size: 36px;
-    margin: 10px;
 }
 
 #model {
     grid-column: 2;
     grid-row: 1 / 5;
-    filter: blur(50px);
+    /* filter: blur(50px); */
     pointer-events: none;
 }
 #model img {
     position: absolute;
-    width: 59dvw;
-    height: 100%;
+    /* width: 59dvw;
+    height: 100%; */
+    max-height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 #model img#hair, #model img#top, #model img#bottom {
     z-index: 2;
@@ -195,4 +202,36 @@ a#shop-link {
 } */
 #model img#model {
     z-index: 0;
+}
+
+@media(max-width: 600px) {
+    #scene {
+        height: calc(100dvh - 40px);
+    }
+    #model-options .option button, #background-options button {
+        width: 35px;
+        height: 35px;
+    }
+    #model-options #size button {
+        font-size: 14px;
+    }
+    .tb-nav-button {
+        width: 60px;
+        height: 80px;
+    }
+    #background-options {
+        justify-self: end;
+    }
+    #tops-next {
+        justify-self: end;
+    }
+    #tops-prev {
+        justify-self: start;
+    }
+    #bottoms-next {
+        justify-self: end;
+    }
+    #bottoms-prev {
+        justify-self: start;
+    }
 }

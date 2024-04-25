@@ -18,7 +18,7 @@ a {
 }
 main {
     display: grid;
-    grid-template-rows: 50px 1fr;
+    grid-template-rows: max-content 1fr;
     height: 100dvh;
 }
 main #top-bar {
@@ -32,4 +32,12 @@ main #top-bar .dot {
     height: 40px;
     border: 1px solid #000;
     border-radius: 100%;
+}
+
+@media(max-width: 600px) {
+    
+    main #top-bar .dot {
+        width: 30px;
+        height: 30px;
+    }
 }
