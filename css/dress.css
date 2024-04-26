@@ -58,9 +58,9 @@ button.selected {
 #model-options button#hair-ginger { background-color: #B2463A; }
 #model-options button#hair-black { background-color: #3F2D21; }
 
-#model-options button#body-pale { background-color: #FDE1C9; }
-#model-options button#body-beige { background-color: #F9BA89; }
-#model-options button#body-tan { background-color: #CA7751; }
+#model-options button#skin-pale { background-color: #FDE1C9; }
+#model-options button#skin-beige { background-color: #F9BA89; }
+#model-options button#skin-tan { background-color: #CA7751; }
 
 #model-options #size button {
     font-family: "Comfortaa", sans-serif;

@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const selectedButton = event.target;
             updateSelectedClass(selectedButton, 'size');
             // Update all model images based on the new size
-            ['hair', 'top', 'bottom', 'body'].forEach(part => {
+            ['hair', 'top', 'bottom', 'skin'].forEach(part => {
                 const currentOption = model.querySelector(`#${part}`).alt;
                 updateModelImage(part, currentOption);
             });
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Set default selections on page load
     document.getElementById('size-medium').click();
-    document.getElementById('body-tan').click();
+    document.getElementById('skin-tan').click();
     document.getElementById('hair-ginger').click();
     document.getElementById('tops-next').click(); // Set a random top
     document.getElementById('bottoms-next').click(); // Set a random bottom
