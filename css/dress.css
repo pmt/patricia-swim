@@ -112,6 +112,7 @@ button.selected {
     z-index: 1000;
     background-repeat: no-repeat;
     cursor: pointer;
+    background-size: contain;
 }
 #tops-next {
     grid-column: 3;
