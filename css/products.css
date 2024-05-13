@@ -1,26 +1,30 @@
 #page {
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
-    grid-template-rows: 1fr 3fr 1fr;
-    grid-gap: 10px;
-    height: calc(100dvh - 50px);
+
+}
+h2 {
+    font-size: 36px;
+    margin-bottom: 0;
 }
 
 #products {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
     display: flex;
     flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
     padding: 20px;
 }
 section {
+    font-family: "Comfortaa", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 90px;
     text-align: center;
     height: 70dvh;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 section.item {
     border: 1px solid #000;
@@ -28,18 +32,23 @@ section.item {
 }
 
 /* Dress link */
-a#checkout-button {
-    grid-column: 2;
-    grid-row: 3;
-    align-self: end;
-    justify-self: end;
+a.checkout-button {
     width: max-content;
     height: max-content;
     padding: 14px;
     border-radius: 36px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
     background-color: #fff;
     border: 1px solid #000;
     box-shadow: 0px 0px 5px #000;
     font-size: 36px;
     margin: 15px;
+}
+
+@media(max-width: 600px) {
+    section {
+        font-size: 30px;
+    }
 }
