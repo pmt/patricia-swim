@@ -164,6 +164,9 @@ button.selected {
 #model img#model {
     z-index: 0;
 }
+.hidden {
+    display: none !important;
+}
 
 @media(max-width: 600px) {
     #scene {

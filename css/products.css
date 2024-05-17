@@ -19,7 +19,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 90px;
+    font-size: 40px;
     text-align: center;
     height: 70dvh;
     width: 100%;
@@ -27,6 +27,7 @@ section {
     margin: 0 auto;
 }
 section.item {
+    display: flex;
     border: 1px solid #000;
     border-radius: 36px;
 }

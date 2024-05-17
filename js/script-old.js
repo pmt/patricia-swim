@@ -64,19 +64,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const topOptions = ['blue', 'maroon', 'orange'];
     const bottomOptions = ['blue', 'maroon', 'orange'];
 
-    // Variables to store the current index of tops and bottoms
-    let topIndex = 0;
-    let bottomIndex = 0;
-
     // Update clothing item based on navigation clicks
     function updateClothingItem(itemType, options, direction) {
-        if (itemType === 'top') {
-            topIndex = (topIndex + direction + options.length) % options.length;
-            updateModelImage('top', options[topIndex]);
-        } else if (itemType === 'bottom') {
-            bottomIndex = (bottomIndex + direction + options.length) % options.length;
-            updateModelImage('bottom', options[bottomIndex]);
-        }
+        const indexKey = itemType + 'Index';
+        const currentIndex = window[indexKey] = (window[indexKey] || 0) + direction;
+        // Loop around the array if index goes out of bounds
+        window[indexKey] = (currentIndex < 0 ? options.length - 1 : currentIndex) % options.length;
+        updateModelImage(itemType, options[window[indexKey]]);
     }
 
     // Function to get a random element from an array
@@ -91,39 +85,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('bottoms-prev').addEventListener('click', () => updateClothingItem('bottom', bottomOptions, -1));
 
     // Set default selections on page load
-    const initialSize = getRandomElement(['size-small', 'size-medium', 'size-large']);
-    const initialSkin = getRandomElement(['skin-pale', 'skin-beige', 'skin-tan']);
-    const initialHair = getRandomElement(['hair-blonde', 'hair-ginger', 'hair-black']);
-    const initialTop = getRandomElement(topOptions);
-    const initialBottom = getRandomElement(bottomOptions);
-
-    document.getElementById(initialSize).click();
-    document.getElementById(initialSkin).click();
-    document.getElementById(initialHair).click();
-
-    // Set the initial top and bottom
-    updateModelImage('top', initialTop);
-    updateModelImage('bottom', initialBottom);
-
-    // Update the topIndex and bottomIndex to match the initial selection
-    topIndex = topOptions.indexOf(initialTop);
-    bottomIndex = bottomOptions.indexOf(initialBottom);
-
-    // Set the initial background
+    document.getElementById('size-medium').click();
+    document.getElementById('skin-tan').click();
+    document.getElementById('hair-ginger').click();
+    document.getElementById('tops-next').click(); // Set a random top
+    document.getElementById('bottoms-next').click(); // Set a random bottom
     updateBackgroundImage(1); // default background
-
-    // Toggle visibility of options and navigation on top-bar click
-    document.getElementById('top-bar').addEventListener('click', () => {
-        console.log('hiii');
-        document.getElementById('model-options').classList.toggle('hidden');
-        document.getElementById('background-options').classList.toggle('hidden');
-        document.querySelectorAll('.tb-nav-button').forEach(button => button.classList.toggle('hidden'));
-    });
-
-    // Add selected options to the shop link URL as query string
-    document.getElementById('right-link').addEventListener('click', (event) => {
-        const top = model.querySelector('#top').alt;
-        const bottom = model.querySelector('#bottom').alt;
-        event.target.href = `products.html?top=${top}&bottom=${bottom}`;
-    });
 });
