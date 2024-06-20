@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to build the image path based on the selected options
     function getImagePath(part, option) {
-        return `images/products/${option}.png`;
+        return `images/products/${option}-${part}.png`;
     }
 
     const params = getQueryParams();
